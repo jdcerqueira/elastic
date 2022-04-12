@@ -1,0 +1,608 @@
+GET _cat/health?v
+
+GET _cat/indices?v
+
+PUT .kibana/_settings
+{
+  "index" : {
+    "number_of_replicas":0
+  }
+}
+
+
+PUT /produtos
+{
+  "settings": {
+    "index":{
+      "number_of_shards":3,
+      "number_of_replicas":0
+    }
+  },
+  "mappings": 
+  {
+    "v1":{
+      "_all":{
+        "type":"text",
+        "analyzer":"portuguese"
+      },
+      "properties": 
+      {
+        "nome":{
+          "fields":{
+            "original":{
+              "type":"keyword"
+            }
+          },
+          "type": "text",
+          "analyzer": "portuguese"
+        },
+        "categoria":{
+          "fields": {
+            "original":{
+              "type": "keyword"
+            }
+          },
+          "type": "text",
+          "analyzer": "portuguese"
+        },
+        "subcategoria":{
+          "fields": {
+            "original":{
+              "type": "keyword"
+            }
+          },
+          "type": "text",
+          "analyzer": "portuguese"
+        },
+        "tags":{
+          "fields": {
+            "original":{
+              "type": "keyword"
+            }
+          },
+          "type": "string",
+          "index": "analyzed",
+          "analyzer": "portuguese"
+        },
+        "fornecedor":{
+          "fields": {
+            "original":{
+              "type": "keyword",
+              "index": "not_analyzed"
+            }
+          },
+          "type": "text"
+        },
+        "preco":{
+          "type": "float"
+        }
+      }
+    }
+  }
+}
+
+
+POST /produtos/v1/
+{
+  "nome":"Scala: Como escalar sua produtividade",
+  "categoria":"Livros",
+  "subcategoria":"Tecnologia",
+  "tags":["impresso","digital","scala","programação funcional","computação","imutabilidade"],
+  "fornecedor":"Casa do Código",
+  "preco":69.90
+}
+
+POST /produtos/v1/
+{
+  "nome":"Big Data: Técnicas e tecnologias para extração de valor dos dados",
+  "categoria":"Livros",
+  "subcategoria":"Tecnologia",
+  "tags":["impresso","digital","larga escala","computação"],
+  "fornecedor":"Casa do Código",
+  "preco":49.90
+}
+
+POST /produtos/v1/
+{
+  "nome":"A história do futebol brasileiro",
+  "categoria":"Livros",
+  "subcategoria":"Esportes",
+  "tags":["impresso","digital","esportes","futebol"],
+  "fornecedor":"Casa do Código",
+  "preco":59.90
+}
+
+POST /produtos/v1/
+{
+  "nome":"Bola de futsal",
+  "categoria":"Esportes",
+  "subcategoria":"Futebol",
+  "tags":["futebol","amador","quadra"],
+  "fornecedor":"Irmãos Silveira Esportes",
+  "preco":29.90
+}
+
+POST /produtos/v1/
+{
+  "nome":"Camiseta Seleção Brasileira",
+  "categoria":"Roupas",
+  "subcategoria":"Esportes",
+  "tags":["futebol","amador","seleção","amarelinha"],
+  "fornecedor":"Irmãos Silveira Esportes",
+  "preco":129.90
+}
+
+POST /produtos/v1/
+{
+  "nome":"Chuteira de Futebol",
+  "categoria":"Calçados ",
+  "subcategoria":"Esportes",
+  "tags":["futebol","amador","campo","amarelinha"],
+  "fornecedor":"Irmãos Silveira Esportes",
+  "preco":129.90
+}
+
+
+GET /produtos/v1/_search?q=digital
+
+Abaixo exemplos de queries DSL
+GET /produtos/v1/_search
+{
+  "query":{
+    "match_all":{
+      
+    }
+  }
+}
+
+GET /produtos/v1/_search
+{
+  "query":{
+    "match":{
+      "tags": "digital"
+    }
+  }
+}
+
+GET /produtos/v1/_search
+{
+  "query":{
+    "bool":{
+      "must": [
+        {"match": {
+          "tags": "impresso"
+        }},
+        {"match": {
+          "nome": "scala"
+          
+        }}
+      ]
+    }
+  }
+}
+
+GET produtos/v1/_search
+{
+  "query":{
+    "bool": {
+      "must": [
+        {"match": {
+          "categoria": "livro"
+        }}
+      ],
+      "should": [
+        {
+          "match": {
+            "tags": "imutabilidade"
+        }},
+        {"match": {
+          "tags": "larga escala"
+        }}
+      ],
+      "must_not": [
+        {"match": {
+          "nome": "scala"
+        }}
+      ]
+    }
+  }
+}
+
+Abaixo exemplos de filters
+Existe uma diferença entre "term" e "terms"
+Semelhante a AND ou OR
+GET produtos/v1/_search
+{
+  "query":{
+    "terms": {
+      "tags": ["digital","quadra","amador"]
+    }
+  }
+}
+
+Exemplo de pesquisas com range no filter
+GET produtos/v1/_search
+{
+  "query":{
+    "range":{
+      "preco": {
+        "lte": 100.0
+      }
+    }
+  }
+}
+
+
+GET /produtos/v1/_search
+{
+  "query":{
+    "bool": {
+      "filter": {
+        "terms": {"tags": ["digital","quadra","amador"]}
+      }
+    }
+  }
+}
+
+
+
+GET produtos/v1/_search
+{
+  "query":{
+    "bool": {
+      "must": [{"match":{"tags":"futebol"}}],
+      "filter": {
+        "bool": {
+          "must":[
+            {"range":{"preco":{"lte":100}}},
+            {"term":{"categoria.original":"Livros"}}
+          ]
+          }
+        }
+      }
+    }
+  }
+
+
+
+GET produtos/v1/_search
+{
+   "query":{
+     "match": {
+       "nome" : {
+         "query": "big data",
+         "operator":"and"  
+       }
+     }
+   }
+}
+
+
+GET produtos/v1/_search
+{
+   "query":{
+     "match": {
+       "nome" : {
+         "query": "big data futebol brasileiro",
+         "minimum_should_match":"50%" 
+       }
+     }
+   }
+}
+
+Na técnica abaixo, o boost dá mais peso para a condição, dessa forma o score torna-se mais alto retornando resultados mais coerentes ao negócio no topo da pesquisa
+GET produtos/v1/_search
+{
+   "query":{
+     "match": {
+       "nome" : {
+         "query": "big data futebol brasileiro",
+         "boost":"2" 
+       }
+     }
+   }
+}
+
+Algo semelhante ao like, no caso o like foi no "ama"
+GET produtos/v1/_search
+{
+  "query": {
+    "query_string": {
+      "query": "tags:ama*"
+    }
+  }
+}
+
+Ou
+
+GET produtos/v1/_search
+{
+  "query": {
+    "prefix": {
+      "tags": "ama"
+    }
+  }
+}
+
+Sugestões na frase
+GET produtos/v1/_search
+{
+  "query": {
+    "match_phrase_prefix": {
+      "nome": "big d"
+    }
+  }
+}
+
+
+Realizando testes com ngrama
+GET _analyze
+{
+  "tokenizer": {
+    "type":"ngram",
+    "min_gram":3,
+    "max_gram":4
+  },
+  "text": "Big Data"
+}
+
+Tokenização com o edge-ngrams
+GET _analyze
+{
+  "tokenizer": {
+    "type":"edge_ngram",
+    "min_gram":2,
+    "max_gram":10
+  },
+  "text": "Big Data"
+}
+
+
+Criando o índice n-grams
+PUT /indice_ngramas
+{
+  "settings": {
+    "index":{
+      "number_of_shards":1,
+      "number_of_replicas":0
+    },
+    "analysis": {
+      "filter": {
+        "filtro_autocomplete":{
+          "type":"edge_ngram",
+          "min_gram":2,
+          "max_gram":20
+        }
+      },
+      "analyzer": {
+        "autocomplete":{
+          "type":"custom",
+          "tokenizer":"standard",
+          "filter":[
+            "lowercase",
+            "filtro_autocomplete"
+            ]
+        }
+      }
+    }
+  }
+}
+
+Exibindo a tokenização que o índice irá gerar para as pesquisas
+GET /indice_ngramas/_analyze?analyzer=autocomplete&text==tecnicamente
+GET /indice_ngramas/_analyze?analyzer=autocomplete&text==Big Data
+GET /indice_ngramas/_analyze?analyzer=autocomplete&text=Elastic 
+
+
+Aplicando o índice de autocomplete no campo nome
+PUT /produtos_autocomplete
+{
+  "settings": {
+    "index":{
+      "number_of_shards":3,
+      "number_of_replicas":0
+    },
+    "analysis": {
+      "filter": {
+        "filtro_autocomplete":{
+          "type":"edge_ngram",
+          "min_gram":2,
+          "max_gram":20
+        }
+      },
+      "analyzer": {
+        "autocomplete":{
+          "type":"custom",
+          "tokenizer":"standard",
+          "filter":[
+            "lowercase",
+            "filtro_autocomplete"
+            ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "v1":{
+      "_all": {
+        "type":"text",
+        "analyzer":"portuguese"
+      },
+      "properties": {
+        "nome":{
+          "fields":{
+            "original": {
+              "type":"keyword"
+            },
+            "autocomplete":{
+                "type":"text",
+                "analyzer": "autocomplete"
+            }
+          },
+          "type":"text",
+          "analyzer": "portuguese"
+        },"categoria":{
+          "fields": {
+            "original":{
+              "type": "keyword"
+            }
+          },
+          "type": "text",
+          "analyzer": "portuguese"
+        },
+        "subcategoria":{
+          "fields": {
+            "original":{
+              "type": "keyword"
+            }
+          },
+          "type": "text",
+          "analyzer": "portuguese"
+        },
+        "tags":{
+          "fields": {
+            "original":{
+              "type": "keyword"
+            }
+          },
+          "type": "string",
+          "index": "analyzed",
+          "analyzer": "portuguese"
+        },
+        "fornecedor":{
+          "fields": {
+            "original":{
+              "type": "keyword",
+              "index": "not_analyzed"
+            }
+          },
+          "type": "text"
+        },
+        "preco":{
+          "type": "float"
+        }
+      }
+    }
+  }
+}
+
+POST /produtos_autocomplete/v1/
+{
+  "nome":"Scala: Como escalar sua produtividade",
+  "categoria":"Livros",
+  "subcategoria":"Tecnologia",
+  "tags":["impresso","digital","scala","programação funcional","computação","imutabilidade"],
+  "fornecedor":"Casa do Código",
+  "preco":69.90
+}
+
+POST /produtos_autocomplete/v1/
+{
+  "nome":"Big Data: Técnicas e tecnologias para extração de valor dos dados",
+  "categoria":"Livros",
+  "subcategoria":"Tecnologia",
+  "tags":["impresso","digital","larga escala","computação"],
+  "fornecedor":"Casa do Código",
+  "preco":49.90
+}
+
+POST /produtos_autocomplete/v1/
+{
+  "nome":"A história do futebol brasileiro",
+  "categoria":"Livros",
+  "subcategoria":"Esportes",
+  "tags":["impresso","digital","esportes","futebol"],
+  "fornecedor":"Casa do Código",
+  "preco":59.90
+}
+
+POST /produtos_autocomplete/v1/
+{
+  "nome":"Bola de futsal",
+  "categoria":"Esportes",
+  "subcategoria":"Futebol",
+  "tags":["futebol","amador","quadra"],
+  "fornecedor":"Irmãos Silveira Esportes",
+  "preco":29.90
+}
+
+POST /produtos_autocomplete/v1/
+{
+  "nome":"Camiseta Seleção Brasileira",
+  "categoria":"Roupas",
+  "subcategoria":"Esportes",
+  "tags":["futebol","amador","seleção","amarelinha"],
+  "fornecedor":"Irmãos Silveira Esportes",
+  "preco":129.90
+}
+
+POST /produtos_autocomplete/v1/
+{
+  "nome":"Chuteira de Futebol",
+  "categoria":"Calçados ",
+  "subcategoria":"Esportes",
+  "tags":["futebol","amador","campo","amarelinha"],
+  "fornecedor":"Irmãos Silveira Esportes",
+  "preco":129.90
+}
+
+POST /produtos_autocomplete/v1/
+{
+  "nome":"Big Data rápido e fácil",
+  "categoria":"Livros",
+  "subcategoria":"Tecnologia",
+  "tags":["impresso","digital","larga escala","computação"],
+  "fornecedor":"Casa do Código",
+  "preco":29.90
+}
+
+POST /produtos_autocomplete/v1/
+{
+  "nome":"Guia rápido e fácil para big data",
+  "categoria":"Livros",
+  "subcategoria":"Tecnologia",
+  "tags":["impresso","digital","larga escala","computação"],
+  "fornecedor":"Casa do Código",
+  "preco":219.90
+}
+
+
+GET /produtos_autocomplete/v1/_search
+{
+  "query":{
+    "match": {
+      "nome.autocomplete": "data bi"
+    }
+  }
+}
+
+
+GET /produtos_autocomplete/v1/_search
+{
+  "query": {
+    "match": {
+      "nome.autocomplete": "data bi"
+    }
+  },
+  "highlight": {
+    "fields": {
+      "nome.autocomplete":{}
+    }
+  }
+}
+
+projeção!!!
+GET /produtos_autocomplete/v1/_search
+{
+  "_source":["nome","fornecedor"],
+  "query": {
+    "match": {
+      "nome.autocomplete": "data bi"
+    }
+  },
+  "highlight": {
+    "fields": {
+      "nome.autocomplete":{}
+    }
+  }
+}

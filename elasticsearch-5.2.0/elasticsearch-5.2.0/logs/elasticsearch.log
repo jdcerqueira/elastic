@@ -1,0 +1,94 @@
+[2022-04-12T13:59:04,979][INFO ][o.e.n.Node               ] [] initializing ...
+[2022-04-12T13:59:05,226][INFO ][o.e.e.NodeEnvironment    ] [t8AO4um] using [1] data paths, mounts [[SAMSUNG (E:)]], net usable_space [914.1gb], net total_space [931.1gb], spins? [unknown], types [NTFS]
+[2022-04-12T13:59:05,226][INFO ][o.e.e.NodeEnvironment    ] [t8AO4um] heap size [1.9gb], compressed ordinary object pointers [true]
+[2022-04-12T13:59:05,228][INFO ][o.e.n.Node               ] node name [t8AO4um] derived from node ID [t8AO4umyQw2gEr_vRghF0Q]; set [node.name] to override
+[2022-04-12T13:59:05,229][INFO ][o.e.n.Node               ] version[5.2.0], pid[13472], build[24e05b9/2017-01-24T19:52:35.800Z], OS[Windows 10/10.0/amd64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/11.0.14/11.0.14+8-LTS-263]
+[2022-04-12T13:59:06,862][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [aggs-matrix-stats]
+[2022-04-12T13:59:06,862][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [ingest-common]
+[2022-04-12T13:59:06,862][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [lang-expression]
+[2022-04-12T13:59:06,863][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [lang-groovy]
+[2022-04-12T13:59:06,863][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [lang-mustache]
+[2022-04-12T13:59:06,863][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [lang-painless]
+[2022-04-12T13:59:06,863][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [percolator]
+[2022-04-12T13:59:06,863][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [reindex]
+[2022-04-12T13:59:06,863][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [transport-netty3]
+[2022-04-12T13:59:06,863][INFO ][o.e.p.PluginsService     ] [t8AO4um] loaded module [transport-netty4]
+[2022-04-12T13:59:06,864][INFO ][o.e.p.PluginsService     ] [t8AO4um] no plugins loaded
+[2022-04-12T13:59:09,822][INFO ][o.e.n.Node               ] initialized
+[2022-04-12T13:59:09,823][INFO ][o.e.n.Node               ] [t8AO4um] starting ...
+[2022-04-12T13:59:10,563][INFO ][o.e.t.TransportService   ] [t8AO4um] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[::1]:9300}
+[2022-04-12T13:59:13,641][INFO ][o.e.c.s.ClusterService   ] [t8AO4um] new_master {t8AO4um}{t8AO4umyQw2gEr_vRghF0Q}{9myQZztETUi-Nzqn4-Daig}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2022-04-12T13:59:13,698][INFO ][o.e.g.GatewayService     ] [t8AO4um] recovered [0] indices into cluster_state
+[2022-04-12T13:59:14,058][INFO ][o.e.h.HttpServer         ] [t8AO4um] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[::1]:9200}
+[2022-04-12T13:59:14,058][INFO ][o.e.n.Node               ] [t8AO4um] started
+[2022-04-12T14:03:45,047][INFO ][o.e.c.m.MetaDataCreateIndexService] [t8AO4um] [.kibana] creating index, cause [api], templates [], shards [1]/[1], mappings [server, config]
+[2022-04-12T14:04:27,033][INFO ][o.e.c.m.MetaDataMappingService] [t8AO4um] [.kibana/89-I9v9vRUaP_ibt_MUevg] create_mapping [index-pattern]
+[2022-04-12T14:04:38,910][INFO ][o.e.c.m.MetaDataMappingService] [t8AO4um] [.kibana/89-I9v9vRUaP_ibt_MUevg] create_mapping [timelion-sheet]
+[2022-04-12T14:10:31,787][INFO ][o.e.c.m.MetaDataUpdateSettingsService] [t8AO4um] updating number_of_replicas to [0] for indices [.kibana]
+[2022-04-12T14:28:41,194][INFO ][o.e.c.m.MetaDataCreateIndexService] [t8AO4um] [produtos] creating index, cause [api], templates [], shards [3]/[0], mappings [v1]
+[2022-04-12T14:28:43,644][INFO ][o.e.c.r.a.AllocationService] [t8AO4um] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[produtos][2], [produtos][0]] ...]).
+[2022-04-12T14:41:20,636][INFO ][o.e.c.m.MetaDataMappingService] [t8AO4um] [.kibana/89-I9v9vRUaP_ibt_MUevg] update_mapping [config]
+[2022-04-12T14:42:14,840][INFO ][o.e.c.m.MetaDataMappingService] [t8AO4um] [.kibana/89-I9v9vRUaP_ibt_MUevg] create_mapping [search]
+[2022-04-12T14:56:43,856][INFO ][o.e.c.m.MetaDataMappingService] [t8AO4um] [produtos/s87ngbniQCKZEgk-LP5K8w] update_mapping [v1]
+[2022-04-12T18:07:39,075][INFO ][o.e.c.m.MetaDataCreateIndexService] [t8AO4um] [indice_ngramas] creating index, cause [api], templates [], shards [1]/[0], mappings []
+[2022-04-12T18:07:39,466][INFO ][o.e.c.r.a.AllocationService] [t8AO4um] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[indice_ngramas][0]] ...]).
+[2022-04-12T18:21:17,546][INFO ][o.e.c.m.MetaDataCreateIndexService] [t8AO4um] [produtos_autocomplete] creating index, cause [api], templates [], shards [3]/[0], mappings [v1]
+[2022-04-12T18:21:20,018][INFO ][o.e.c.r.a.AllocationService] [t8AO4um] Cluster health status changed from [YELLOW] to [GREEN] (reason: [shards started [[produtos_autocomplete][2], [produtos_autocomplete][0]] ...]).
+[2022-04-12T19:05:46,163][WARN ][o.e.h.n.Netty4HttpServerTransport] [t8AO4um] caught exception while handling client http traffic, closing connection [id: 0xcbadcca5, L:/127.0.0.1:9200 - R:/127.0.0.1:56886]
+java.io.IOException: Foi forçado o cancelamento de uma conexão existente pelo host remoto
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:?]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:?]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:276) ~[?:?]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:245) ~[?:?]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:223) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:358) ~[?:?]
+	at io.netty.buffer.PooledHeapByteBuf.setBytes(PooledHeapByteBuf.java:261) ~[netty-buffer-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1100) ~[netty-buffer-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:366) ~[netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:118) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:642) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:527) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:481) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:441) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) [netty-common-4.1.7.Final.jar:4.1.7.Final]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2022-04-12T19:05:46,163][WARN ][o.e.h.n.Netty4HttpServerTransport] [t8AO4um] caught exception while handling client http traffic, closing connection [id: 0x263305ef, L:/127.0.0.1:9200 - R:/127.0.0.1:56892]
+java.io.IOException: Foi forçado o cancelamento de uma conexão existente pelo host remoto
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:?]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:?]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:276) ~[?:?]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:245) ~[?:?]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:223) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:358) ~[?:?]
+	at io.netty.buffer.PooledHeapByteBuf.setBytes(PooledHeapByteBuf.java:261) ~[netty-buffer-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1100) ~[netty-buffer-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:366) ~[netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:118) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:642) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:527) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:481) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:441) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) [netty-common-4.1.7.Final.jar:4.1.7.Final]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2022-04-12T19:05:46,163][WARN ][o.e.h.n.Netty4HttpServerTransport] [t8AO4um] caught exception while handling client http traffic, closing connection [id: 0x461b8ad8, L:/127.0.0.1:9200 - R:/127.0.0.1:56915]
+java.io.IOException: Foi forçado o cancelamento de uma conexão existente pelo host remoto
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[?:?]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[?:?]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:276) ~[?:?]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:245) ~[?:?]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:223) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:358) ~[?:?]
+	at io.netty.buffer.PooledHeapByteBuf.setBytes(PooledHeapByteBuf.java:261) ~[netty-buffer-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1100) ~[netty-buffer-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:366) ~[netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:118) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:642) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:527) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:481) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:441) [netty-transport-4.1.7.Final.jar:4.1.7.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) [netty-common-4.1.7.Final.jar:4.1.7.Final]
+	at java.lang.Thread.run(Thread.java:834) [?:?]
+[2022-04-12T19:05:52,178][INFO ][o.e.n.Node               ] [t8AO4um] stopping ...
+[2022-04-12T19:05:52,197][INFO ][o.e.n.Node               ] [t8AO4um] stopped
+[2022-04-12T19:05:52,197][INFO ][o.e.n.Node               ] [t8AO4um] closing ...
+[2022-04-12T19:05:52,202][INFO ][o.e.n.Node               ] [t8AO4um] closed

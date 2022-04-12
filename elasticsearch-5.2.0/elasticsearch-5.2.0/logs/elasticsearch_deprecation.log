@@ -1,0 +1,49 @@
+[2022-04-12T13:59:07,459][WARN ][o.e.d.s.g.GroovyScriptEngineService] [groovy] scripts are deprecated, use [painless] scripts instead
+[2022-04-12T14:03:45,010][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [buildNum]
+[2022-04-12T14:04:27,024][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [title]
+[2022-04-12T14:04:27,030][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [timeFieldName]
+[2022-04-12T14:04:27,031][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [intervalName]
+[2022-04-12T14:04:27,031][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [fields]
+[2022-04-12T14:04:27,031][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [sourceFilters]
+[2022-04-12T14:04:27,031][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [fieldFormatMap]
+[2022-04-12T14:04:27,032][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [title]
+[2022-04-12T14:04:27,032][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [timeFieldName]
+[2022-04-12T14:04:27,032][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [intervalName]
+[2022-04-12T14:04:27,032][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [fields]
+[2022-04-12T14:04:27,032][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [sourceFilters]
+[2022-04-12T14:04:27,032][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [fieldFormatMap]
+[2022-04-12T14:04:38,906][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [title]
+[2022-04-12T14:04:38,907][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [description]
+[2022-04-12T14:04:38,907][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [timelion_sheet]
+[2022-04-12T14:04:38,907][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [timelion_interval]
+[2022-04-12T14:04:38,907][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [timelion_other_interval]
+[2022-04-12T14:04:38,907][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [searchSourceJSON]
+[2022-04-12T14:04:38,908][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [title]
+[2022-04-12T14:04:38,908][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [description]
+[2022-04-12T14:04:38,908][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [timelion_sheet]
+[2022-04-12T14:04:38,908][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [timelion_interval]
+[2022-04-12T14:04:38,909][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [timelion_other_interval]
+[2022-04-12T14:04:38,909][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [searchSourceJSON]
+[2022-04-12T14:04:39,001][WARN ][o.e.d.i.q.QueryParseContext] query malformed, empty clause found at [1:143]
+[2022-04-12T14:28:41,193][WARN ][o.e.d.i.m.TypeParsers    ] Expected a boolean for property [index] but got [not_analyzed]
+[2022-04-12T14:28:41,193][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [tags]
+[2022-04-12T14:42:14,838][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [title]
+[2022-04-12T14:42:14,838][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [description]
+[2022-04-12T14:42:14,839][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [columns]
+[2022-04-12T14:42:14,839][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [sort]
+[2022-04-12T14:42:14,839][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [searchSourceJSON]
+[2022-04-12T14:42:14,839][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [title]
+[2022-04-12T14:42:14,839][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [description]
+[2022-04-12T14:42:14,839][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [columns]
+[2022-04-12T14:42:14,839][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [sort]
+[2022-04-12T14:42:14,839][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [searchSourceJSON]
+[2022-04-12T18:09:19,237][WARN ][o.e.d.r.a.a.i.RestAnalyzeAction] text request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+[2022-04-12T18:09:19,237][WARN ][o.e.d.r.a.a.i.RestAnalyzeAction] analyzer request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+[2022-04-12T18:09:56,974][WARN ][o.e.d.r.a.a.i.RestAnalyzeAction] text request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+[2022-04-12T18:09:56,974][WARN ][o.e.d.r.a.a.i.RestAnalyzeAction] analyzer request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+[2022-04-12T18:12:26,585][WARN ][o.e.d.r.a.a.i.RestAnalyzeAction] text request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+[2022-04-12T18:12:26,585][WARN ][o.e.d.r.a.a.i.RestAnalyzeAction] analyzer request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+[2022-04-12T18:13:59,077][WARN ][o.e.d.r.a.a.i.RestAnalyzeAction] text request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+[2022-04-12T18:13:59,077][WARN ][o.e.d.r.a.a.i.RestAnalyzeAction] analyzer request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+[2022-04-12T18:21:17,545][WARN ][o.e.d.i.m.TypeParsers    ] Expected a boolean for property [index] but got [not_analyzed]
+[2022-04-12T18:21:17,545][WARN ][o.e.d.i.m.StringFieldMapper$TypeParser] The [string] field is deprecated, please use [text] or [keyword] instead on [tags]
